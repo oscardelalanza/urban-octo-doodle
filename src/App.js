@@ -1,11 +1,12 @@
-import { useForm } from './hooks/useForm';
+import { useForm } from './hooks/useForm'
+import Input from './components/Input'
 
 const App = () => {
   const [form, handleChange] = useForm({ name: '' })
   console.log(form)
   return (
     <form>
-      <input name="name" placeholder="Name" value={form.value} onChange={handleChange}/>
+      <Input label="Name" value={form.name} name="name" onChange={handleChange} placeholder="Name"/>
     </form>
   )
 }
