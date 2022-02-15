@@ -4,18 +4,16 @@ import Input from './components/Input'
 import Card from './components/Card'
 import Container from './components/Container'
 import Button from './components/Button'
+import UserForm from './components/UserForm'
 
 const App = () => {
   const [users, setUsers] = useState([])
-  const [form, handleChange, reset] = useForm({ name: '', lastName: '', email: '' })
 
-  const submit = ev => {
-    ev.preventDefault()
+  const submit = user => {
     setUsers([
       ...users,
-      form
+      user
     ])
-    reset()
   }
 
   return (
@@ -23,12 +21,7 @@ const App = () => {
       <Container>
         <Card>
           <div style={{ padding: 20 }}>
-            <form onSubmit={submit}>
-              <Input label="Name" value={form.name} name="name" onChange={handleChange} placeholder="Name"/>
-              <Input label="Last Name" value={form.lastName} name="lastName" onChange={handleChange} placeholder="Last name"/>
-              <Input label="Email" value={form.email} name="email" onChange={handleChange} placeholder="email"/>
-              <Button>Sent</Button>
-            </form>
+            <UserForm submit={submit} />
           </div>
         </Card>
         <Card>
