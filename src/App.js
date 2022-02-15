@@ -19,25 +19,27 @@ const App = () => {
   }
 
   return (
-    <Container>
-      <Card>
-        <div style={{ padding: 20 }}>
-          <form onSubmit={submit}>
-            <Input label="Name" value={form.name} name="name" onChange={handleChange} placeholder="Name"/>
-            <Input label="Last Name" value={form.lastName} name="lastName" onChange={handleChange} placeholder="Last name"/>
-            <Input label="Email" value={form.email} name="email" onChange={handleChange} placeholder="email"/>
-            <Button>Sent</Button>
-          </form>
-        </div>
-      </Card>
-      <Card>
-        <ul>
-          {users.map(user =>
-            <li key={user.email}>{`${user.name} ${user.lastName} ${user.email}`}</li>
-          )}
-        </ul>
-      </Card>
-    </Container>
+    <div style={{ marginTop: '15%'}}>
+      <Container>
+        <Card>
+          <div style={{ padding: 20 }}>
+            <form onSubmit={submit}>
+              <Input label="Name" value={form.name} name="name" onChange={handleChange} placeholder="Name"/>
+              <Input label="Last Name" value={form.lastName} name="lastName" onChange={handleChange} placeholder="Last name"/>
+              <Input label="Email" value={form.email} name="email" onChange={handleChange} placeholder="email"/>
+              <Button>Sent</Button>
+            </form>
+          </div>
+        </Card>
+        <Card>
+          <ul>
+            {users.map(user =>
+              <li key={user.email}>{`${user.name} ${user.lastName} ${user.email}`}</li>
+            )}
+          </ul>
+        </Card>
+      </Container>
+    </div>
   )
 }
 
