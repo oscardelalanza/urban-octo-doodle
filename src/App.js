@@ -7,7 +7,7 @@ import Button from './components/Button'
 
 const App = () => {
   const [users, setUsers] = useState([])
-  const [form, handleChange] = useForm({ name: '', lastName: '', email: '' })
+  const [form, handleChange, reset] = useForm({ name: '', lastName: '', email: '' })
 
   const submit = ev => {
     ev.preventDefault()
@@ -15,6 +15,7 @@ const App = () => {
       ...users,
       form
     ])
+    reset()
   }
 
   console.log(form, users)
