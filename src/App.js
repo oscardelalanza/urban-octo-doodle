@@ -18,7 +18,6 @@ const App = () => {
     reset()
   }
 
-  console.log(form, users)
   return (
     <Container>
       <Card>
